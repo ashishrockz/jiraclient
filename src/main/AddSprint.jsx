@@ -17,7 +17,7 @@ const SprintModal = ({ show, handleClose, projectId }) => {
       }
 
       const response = await axios.post(
-        'http://localhost:8080/api/sprint',
+        'https://server-dk5b.onrender.com/api/sprint',
         { 
           sprintName, 
           sprintType,

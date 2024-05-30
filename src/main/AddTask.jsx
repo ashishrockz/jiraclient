@@ -20,7 +20,7 @@ const AddTaskModal = ({ show, handleClose, sprintId, projectId }) => {
       }
 
       const response = await axios.post(
-        `http://localhost:8080/api/issue/${sprintId}`,
+        `https://server-dk5b.onrender.com/api/issue/${sprintId}`,
         { 
           title, 
           Summary,
