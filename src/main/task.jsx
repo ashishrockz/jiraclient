@@ -45,7 +45,7 @@ const Tasks = () => {
                 throw new Error("No token found in localStorage");
             }
 
-            const response = await axios.get(`http://localhost:8080/api/issue/${sprintId}`, {
+            const response = await axios.get(`https://server-dk5b.onrender.com/api/issue/${sprintId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
