@@ -144,10 +144,7 @@ hr {
 
 @media (max-width: 900px) {
   .container {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    display: inline-block;
   }
   .login_sign-page {
     flex-direction: column;
