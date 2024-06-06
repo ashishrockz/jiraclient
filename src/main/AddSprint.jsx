@@ -17,7 +17,7 @@ const SprintModal = ({ show, handleClose, projectId }) => {
       }
 
       const response = await axios.post(
-        'https://server-dk5b.onrender.com/api/sprint',
+        'http://localhost:8080/api/sprint',
         { 
           sprintName, 
           sprintType,
@@ -47,7 +47,7 @@ const SprintModal = ({ show, handleClose, projectId }) => {
 
   return (
     <div className={`modal ${show ? 'show' : ''}`} style={{ display: show ? 'block' : 'none' }}>
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Create Sprint</h5>

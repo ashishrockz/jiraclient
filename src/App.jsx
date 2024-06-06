@@ -9,6 +9,7 @@ import Home from './main/home';
 import Projects from './main/projects';
 import Sprints from './main/sprints';  // Adjusted to match your component
 import Task from './main/task';
+import IndividualTask from './main/individual_task';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(!!localStorage.getItem('token'));
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/projects" component={Projects} />
         <Route path="/project/:projectId/sprint" component={Sprints} />  {/* Adjusted to match your paths */}
         <Route path="/:projectId/sprint/:sprintId/tasks" component={Task} /> 
+        <Route path="/:sprintId/task/:id" component={IndividualTask}/>
       </Switch>
     </Router>
   );

@@ -4,13 +4,14 @@ import logo from './logo.png';
 import picture from './gg.jpg';
 import axios from 'axios';
 import ProjectModal from '../main/AddProject'; // Adjust this path if necessary
+import Profile from '../main/profile';
 
 const Header = ({ isAuthenticated, onLogout }) => {
   const [showModal, setShowModal] = useState(false);
-
+  const [showprofile, setProfile] = useState(false);
   const handleLogout = async () => {
     try {
-      await axios.post("https://server-dk5b.onrender.com/auth/logout");
+      await axios.post("http://localhost:8080/auth/logout");
       localStorage.removeItem('token');
       window.location = "/login";
       onLogout();
@@ -22,6 +23,8 @@ const Header = ({ isAuthenticated, onLogout }) => {
 
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
+  const handleshowprofile = () => setProfile(true);
+  const handlecloseprofile = () => setProfile(false);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -57,11 +60,11 @@ const Header = ({ isAuthenticated, onLogout }) => {
         <ul className="navbar-nav">
           {isAuthenticated ? (
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href={() => false} id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a className="nav-link dropdown" href={() => false} id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src={picture} width="30" height="30" className="rounded-circle" alt="Profile"/>
               </a>
               <div className="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
-                <a className="dropdown-item" href={() => false}>Profile</a>
+                <a className="dropdown-item" href={() => false} onClick={handleshowprofile}>Profile</a>
                 <div className="dropdown-divider"></div>
                 <a className="dropdown-item" href={() => false} onClick={handleLogout}>Logout</a>
               </div>
@@ -79,6 +82,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
         </ul>
       </div>
       <ProjectModal show={showModal} handleClose={handleCloseModal} />
+      <Profile show={showprofile} handleClose={handlecloseprofile}/>
     </nav>
   );
 };

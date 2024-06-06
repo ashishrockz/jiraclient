@@ -28,7 +28,7 @@ const Projects = () => {
 
             console.log('Fetching projects with token:', token);
 
-            const response = await axios.get('https://server-dk5b.onrender.com/api/project', {
+            const response = await axios.get('http://localhost:8080/api/project', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -85,6 +85,8 @@ const Projects = () => {
                         <th scope="col">Name</th>
                         <th scope="col">Key</th>
                         <th scope="col">Type</th>
+                        <th scope="col">U/D</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -96,6 +98,17 @@ const Projects = () => {
                             </Link>
                             <td>{project.key}</td>
                             <td>{project.type}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="nav-link dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/projects">Update</a></li>
+                                        <li><button class="dropdown-item btn btn-link" type="button">Delete</button></li>
+                                        </ul>
+                                </div>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

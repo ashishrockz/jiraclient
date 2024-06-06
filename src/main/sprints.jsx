@@ -25,7 +25,7 @@ const Sprints = () => {
 
             console.log('Fetching sprints with token:', token);
 
-            const response = await axios.get(`https://server-dk5b.onrender.com/api/sprint/project/${projectId}`, {
+            const response = await axios.get(`http://localhost:8080/api/sprint/project/${projectId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -64,7 +64,7 @@ const Sprints = () => {
     return (
         <div className="container-fluid">
             <div className="d-flex justify-content-between">
-                <h4>Sprints</h4>
+                <h4><a href='/projects'>Projects</a> / Sprints</h4>
                 <button className="btn btn-primary" onClick={handleShowModal}>Create Sprint</button>
             </div>
             <div className="form-inline mt-3 mb-3">

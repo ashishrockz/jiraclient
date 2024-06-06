@@ -1,3 +1,7 @@
 .container-fluid{
     padding: 30px;
 }
+a{
+    color: black;
+    text-decoration: none;
+}
