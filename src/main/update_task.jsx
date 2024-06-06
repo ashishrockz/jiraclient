@@ -15,7 +15,7 @@ const EditTaskModal = ({ show, handleClose }) => {
   useEffect(() => {
     const fetchTask = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/issue/sprintId/task/${id}`, {
+        const response = await axios.get(`http://server-dk5b.onrender.com/api/issue/sprintId/task/${id}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
@@ -41,7 +41,7 @@ const EditTaskModal = ({ show, handleClose }) => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/auth/users', {
+      const response = await axios.get('http://server-dk5b.onrender.com/auth/users', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -63,7 +63,7 @@ const EditTaskModal = ({ show, handleClose }) => {
       }
 
       const response = await axios.put(
-        `http://localhost:8080/api/issue/${id}`,
+        `http://server-dk5b.onrender.com/api/issue/${id}`,
         { 
           title, 
           Summary,

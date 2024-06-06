@@ -25,7 +25,7 @@ const Sprints = () => {
 
             console.log('Fetching sprints with token:', token);
 
-            const response = await axios.get(`http://localhost:8080/api/sprint/project/${projectId}`, {
+            const response = await axios.get(`http://server-dk5b.onrender.com/api/sprint/project/${projectId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

@@ -11,7 +11,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
   const [showprofile, setProfile] = useState(false);
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:8080/auth/logout");
+      await axios.post("http://server-dk5b.onrender.com/auth/logout");
       localStorage.removeItem('token');
       window.location = "/login";
       onLogout();
