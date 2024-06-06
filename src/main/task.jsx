@@ -20,7 +20,7 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
              const token = localStorage.getItem('token');
              if (!token) throw new Error("No token found in localStorage");
 
-             const response = await axios.get(`http://server-dk5b.onrender.com/api/sprint/${sprintId}`, {
+             const response = await axios.get(`https://server-dk5b.onrender.com/api/sprint/${sprintId}`, {
                  headers: {
                      'Authorization': `Bearer ${token}`
                  }
@@ -41,7 +41,7 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
              const token = localStorage.getItem('token');
              if (!token) throw new Error("No token found in localStorage");
 
-             await axios.delete(`http://server-dk5b.onrender.com/api/issue/${taskId}`, {
+             await axios.delete(`https://server-dk5b.onrender.com/api/issue/${taskId}`, {
                  headers: {
                      'Authorization': `Bearer ${token}`
                  }
@@ -58,7 +58,7 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
              const token = localStorage.getItem('token');
              if (!token) throw new Error("No token found in localStorage");
 
-             const response = await axios.get(`http://server-dk5b.onrender.com/api/issue/${sprintId}`, {
+             const response = await axios.get(`https://server-dk5b.onrender.com/api/issue/${sprintId}`, {
                  headers: {
                      'Authorization': `Bearer ${token}`
                  }

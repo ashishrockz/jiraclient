@@ -19,7 +19,7 @@ const Profile = ({ show, handleClose }) => {
         throw new Error('No token found');
       }
 
-      const response = await axios.get('http://server-dk5b.onrender.com/auth/me', {
+      const response = await axios.get('https://server-dk5b.onrender.com/auth/me', {
         headers: {
           'Authorization': `Bearer ${token}`
         }

@@ -10,7 +10,7 @@ function Login({ onLogin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://server-dk5b.onrender.com/auth/login";
+      const url = "https://server-dk5b.onrender.com/auth/login";
       const data = { email, password };
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.token);  // Assuming res.token contains the JWT

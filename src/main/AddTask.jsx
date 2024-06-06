@@ -18,7 +18,7 @@ const AddTaskModal = ({ show, handleClose, sprintId, projectId }) => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://server-dk5b.onrender.com/auth/users', {
+      const response = await axios.get('https://server-dk5b.onrender.com/auth/users', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -40,7 +40,7 @@ const AddTaskModal = ({ show, handleClose, sprintId, projectId }) => {
       }
 
       const response = await axios.post(
-        `http://server-dk5b.onrender.com/api/issue/${sprintId}`,
+        `https://server-dk5b.onrender.com/api/issue/${sprintId}`,
         { 
           title, 
           Summary,
