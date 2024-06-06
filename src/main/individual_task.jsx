@@ -86,7 +86,7 @@ const IndividualTask = () => {
             <div className='col-1'>
               <button className="btn btn-primary" onClick={handleShowModal}>update</button>
             </div>
-            <div className='col-1'>
+            <div className='col-3'>
               <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
             </div>
           </div>
