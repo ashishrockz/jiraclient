@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './style.css';
+import './table.css';
 import SprintModal from '../main/AddSprint'; // Assuming you have a modal component for adding sprints
 import axios from 'axios';
 import { formatDate } from '../utils/formatDate.js'; // Import the formatDate function

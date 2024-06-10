@@ -1,0 +1,9 @@
+.table td{
+    border-top: none;
+}
+.table th{
+    border-top: none;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-style: none;
+}

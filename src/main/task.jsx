@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams , Link } from 'react-router-dom';
 import axios from 'axios';
+import './table.css';
 import TaskModal from '../main/AddTask'; // Assuming you have a modal component for adding sprints
 
  const Tasks = () => {

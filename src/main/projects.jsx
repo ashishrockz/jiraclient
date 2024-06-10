@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import './style.css';
+import './table.css';
 import ProjectModal from '../main/AddProject';
 import axios from 'axios';
 
