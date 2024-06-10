@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useParams , Link } from 'react-router-dom';
 import axios from 'axios';
 import './table.css';
+import { FiMoreHorizontal } from "react-icons/fi";
 import TaskModal from '../main/AddTask'; // Assuming you have a modal component for adding sprints
 
  const Tasks = () => {
@@ -134,7 +135,7 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
                             <th>
                                 <div className="dropdown">
                                     <button className="nav-link dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i className="bi bi-three-dots"></i>
+                                    <FiMoreHorizontal />
                                     </button>
                                     <ul className="dropdown-menu">
                                         <li><Link className="dropdown-item btn btn-link">Update</Link></li>

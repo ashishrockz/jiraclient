@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import './style.css';
 import './table.css';
+import { FiMoreHorizontal } from "react-icons/fi";
 import ProjectModal from '../main/AddProject';
 import axios from 'axios';
 
@@ -102,7 +103,7 @@ const Projects = () => {
                             <td>
                                 <div class="dropdown">
                                     <button class="nav-link dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots"></i>
+                                    <FiMoreHorizontal />
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="/projects">Update</a></li>
