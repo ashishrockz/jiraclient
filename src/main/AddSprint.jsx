@@ -17,7 +17,7 @@ const SprintModal = ({ show, handleClose, projectId }) => {
       }
 
       const response = await axios.post(
-        'https://server-dk5b.onrender.com/api/sprint',
+        'https://server-omega-umber.vercel.app/api/sprint',
         { 
           sprintName, 
           sprintType,

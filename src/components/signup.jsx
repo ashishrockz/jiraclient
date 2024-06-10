@@ -11,7 +11,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://server-dk5b.onrender.com/auth/signup", { fullName, email, role, password });
+      await axios.post("https://server-omega-umber.vercel.app/auth/signup", { fullName, email, role, password });
       window.location.href = "/login";
     } catch (err) {
       console.error("Signup error:", err);

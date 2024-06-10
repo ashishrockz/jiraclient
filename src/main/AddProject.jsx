@@ -21,7 +21,7 @@ const ProjectModal = ({ show, handleClose }) => {
       console.log('Token:', token); // Debug: Verify token is retrieved correctly
 
       const response = await axios.post(
-        'https://server-dk5b.onrender.com/api/project/',
+        'https://server-omega-umber.vercel.app/api/project/',
         { 
           name: projectName, 
           key: projectKey,

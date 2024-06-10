@@ -26,7 +26,7 @@ const Sprints = () => {
 
             console.log('Fetching sprints with token:', token);
 
-            const response = await axios.get(`https://server-dk5b.onrender.com/api/sprint/project/${projectId}`, {
+            const response = await axios.get(`https://server-omega-umber.vercel.app/api/sprint/project/${projectId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

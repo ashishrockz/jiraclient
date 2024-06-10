@@ -11,7 +11,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
   const [showprofile, setProfile] = useState(false);
   const handleLogout = async () => {
     try {
-      await axios.post("https://server-dk5b.onrender.com/auth/logout");
+      await axios.post("https://server-omega-umber.vercel.app/auth/logout");
       localStorage.removeItem('token');
       window.location = "/login";
       onLogout();

@@ -30,7 +30,7 @@ const Projects = () => {
 
             console.log('Fetching projects with token:', token);
 
-            const response = await axios.get('https://server-dk5b.onrender.com/api/project', {
+            const response = await axios.get('https://server-omega-umber.vercel.app/api/project', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

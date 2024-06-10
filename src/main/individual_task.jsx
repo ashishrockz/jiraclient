@@ -18,7 +18,7 @@ const IndividualTask = () => {
           throw new Error("No token found in localStorage");
         }
 
-        const response = await axios.get(`https://server-dk5b.onrender.com/api/issue/sprintId/task/${id}`, {
+        const response = await axios.get(`https://server-omega-umber.vercel.app/api/issue/sprintId/task/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -47,7 +47,7 @@ const IndividualTask = () => {
       if (!token) {
         throw new Error("No token found in localStorage");
       }
-      await axios.delete(`https://server-dk5b.onrender.com/api/issue/${id}`, {
+      await axios.delete(`https://server-omega-umber.vercel.app/api/issue/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
