@@ -143,6 +143,9 @@ hr {
 }
 
 @media (max-width: 900px) {
+  .container {
+    display: block;
+  }
   .login_sign-page {
     flex-direction: column;
     text-align: center;
