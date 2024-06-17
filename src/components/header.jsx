@@ -12,7 +12,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
   const [showprofile, setProfile] = useState(false);
   const handleLogout = async () => {
     try {
-      await axios.post("https://server-omega-umber.vercel.app/auth/logout");
+      await axios.post("http://localhost:8080/auth/logout");
       localStorage.removeItem('token');
       window.location = "/login";
       onLogout();
@@ -71,14 +71,14 @@ const Header = ({ isAuthenticated, onLogout }) => {
               </div>
             </li>
           ) : (
-            <>
-              <li className="nav-item">
+            <div className="authheader">
+              <li className="nav-item p-2">
                 <a className="nav-link" href="/login">Login</a>
               </li>
-              <li className="nav-item">
+              <li className="nav-item p-2">
                 <a className="nav-link" href="/signup">Signup</a>
               </li>
-            </>
+            </div>
           )}
         </ul>
       </div>

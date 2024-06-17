@@ -143,6 +143,9 @@ hr {
 .button a:hover {
   background: #3ba626;
 }
+.authheader{
+  display: flex;
+}
 
 @media (max-width: 900px) {
   .container {
@@ -154,6 +157,9 @@ hr {
 
   .login_sign-page .text {
     margin-bottom: 30px;
+  }
+  .authheader{
+    display: flex;
   }
 }
 
