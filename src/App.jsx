@@ -33,7 +33,7 @@ function App() {
         <Route path="/projects" component={Projects} />
         <Route path="/project/:projectId/sprint" component={Sprints} />  {/* Adjusted to match your paths */}
         <Route path="/:projectId/sprint/:sprintId/tasks" component={Task} /> 
-        <Route path="/:sprintId/task/:id" component={IndividualTask}/>
+        <Route path="/:projectId/sprint/:sprintId/task/:id" component={IndividualTask}/>
       </Switch>
     </Router>
   );
