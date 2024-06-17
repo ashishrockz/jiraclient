@@ -43,13 +43,15 @@ const Header = ({ isAuthenticated, onLogout }) => {
           </li> */}
           <li className="nav-item">
             <div className="dropdown">
-              <button className="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Project
+              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            Project
               </button>
-              <ul className="dropdown-menu">
-                <li><a className="nav-link" href="/projects">View all</a></li>
-                <li><button className="nav-link btn btn-link" onClick={handleShowModal}>Create Project</button></li>
-              </ul>
+              <div class="dropdown-menu dropdown-menu-sm-left">
+              <><a className="nav-link" href="/projects">View all</a></>
+              <div className="dropdown-divider"></div>
+
+                <><button className="nav-link btn btn-link" onClick={handleShowModal}>Create Project</button></>
+              </div>
             </div>
           </li>
           {/* <li className="nav-item">
@@ -65,9 +67,9 @@ const Header = ({ isAuthenticated, onLogout }) => {
                 <img src={picture} width="30" height="30" className="rounded-circle" alt="Profile"/>
               </a>
               <div className="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
-                <a className="dropdown-item" href={() => false} onClick={handleshowprofile}>Profile</a>
+                <button className="dropdown-item" href={() => false} onClick={handleshowprofile}>Profile</button>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href={() => false} onClick={handleLogout}><IoLogOutOutline/>Logout</a>
+                <button className="dropdown-item" href={() => false} onClick={handleLogout}><IoLogOutOutline/>Logout</button>
               </div>
             </li>
           ) : (
