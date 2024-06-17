@@ -83,10 +83,10 @@ const IndividualTask = () => {
           <p><strong>Created Date:</strong>{formatDate(task.createdDate)}</p>
           <p><strong>Updated Date:</strong>{formatDate(task.updatedDate)}</p>
           <div className='row'>
-            <div className='col-1'>
+            <div className='col'>
               <button className="btn btn-primary" onClick={handleShowModal}>update</button>
             </div>
-            <div className='col-1'>
+            <div className='col-8'>
               <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
             </div>
           </div>
