@@ -139,6 +139,7 @@ const EditTaskModal = ({ show, handleClose }) => {
                     <option value="" disabled hidden>Choose Type</option>
                     <option value="Epic">Epic</option>
                     <option value="Task">Task</option>
+                    <option value="Bug">Bug</option>
                   </select>
                 </div>
                 <div className="col-4 my-1">

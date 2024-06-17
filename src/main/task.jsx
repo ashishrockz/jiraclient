@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams , Link } from 'react-router-dom';
 import axios from 'axios';
-import './table.css';
 import { FiMoreHorizontal } from "react-icons/fi";
 import TaskModal from '../main/AddTask'; // Assuming you have a modal component for adding sprints
-
+import './table.css';
+import { BiFilter } from "react-icons/bi";
  const Tasks = () => {
      const { sprintId } = useParams();
      const [showModal, setShowModal] = useState(false);
@@ -13,6 +13,7 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
      const [currentPage, setCurrentPage] = useState(1);
      const [tasksPerPage] = useState(10);
      const [searchTerm, setSearchTerm] = useState('');
+     
      
      const handleShowModal = () => setShowModal(true);
      const handleCloseModal = () => setShowModal(false);
@@ -67,7 +68,7 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
              });
 
              if (response.data) {
-                 setTasks(response.data);
+                 setTasks(response.data.reverse());
              } else {
                  throw new Error("Unexpected response structure");
              }
@@ -94,23 +95,96 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
     return (
         <div className="container-fluid">
             <div className="d-flex justify-content-between">
-                 <h4><Link to='/projects'>Projects</Link> / <Link to={`/project/${projectId}/sprint`}>Sprints</Link> / Tasks</h4>
+                 <h6><Link to='/projects'>Projects</Link> / <Link to={`/project/${projectId}/sprint`}>Sprints</Link> / Tasks</h6>
                  <button className="btn btn-primary" onClick={handleShowModal}>Create Issue</button>
              </div>
-            <div className="form-inline mt-3 mb-3">
-                <input
-                    className="form-control mr-sm-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-            </div>
-            <table className="table table-striped ">
+              <h4>List</h4>
+              <div className="d-flex justify-content-between">
+                <div className="form-inline mt-3 mb-3">
+                    <input
+                        className="form-control mr-sm-2"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+                <div className='d-flex'>
+                    <div className="dropdown mt-3 p-2">
+                        <button className="nav-link dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <BiFilter /> Filter
+                        </button>
+                         <ul className="dropdown-menu">
+                             <li>
+                                <div className="dropdown-item btn btn-link">
+                                    Status:
+                                    <label className='filter p-2'>
+                                        <input type='checkbox' className='thebox'/>
+                                        Open
+                                    </label>
+                                    <label className='filter p-2'>
+                                        <input type='checkbox' className='thebox'/>
+                                        Inprogres
+                                    </label>
+                                    <label className='filter p-2'>
+                                        <input type='checkbox' className='thebox'/>
+                                        Close
+                                    </label>
+                                </div>
+                                
+                             </li>
+                             <li>
+                                <div className="dropdown-item btn btn-link">Priority:
+                                    <label className='filter p-2'>
+                                        <input type='checkbox' className='thebox'/>
+                                        High
+                                    </label>
+                                    <label className='filter p-2'>
+                                        <input type='checkbox'className='thebox'/>
+                                        Medium
+                                    </label>
+                                    <label className='filter p-2'>
+                                        <input type='checkbox' className='thebox'/>
+                                        Low
+                                    </label>
+                                </div>
+                            </li>
+                             <li>
+                                <div className="dropdown-item btn btn-link">
+                                    Type:
+                                    <label className='filter p-2'>
+                                        <input type='checkbox' className='thebox'/>
+                                        Epic
+                                    </label>
+                                    <label className='filter p-2'>
+                                        <input type='checkbox' className='thebox'/>
+                                        Task
+                                    </label>
+                                    <label className='filter p-2'>
+                                        <input type='checkbox' className='thebox'/>
+                                        Bug
+                                    </label>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div className="dropdown-item btn btn-link">
+                                    Assigned To:
+                                    <label className='filter p-2'>
+                                        <input type='text'className="form-control"/>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>                    
+                    </div>
+                </div>
+             </div>
+        <div class="table-responsive">
+            <table className="table table-striped " >
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Id</th>
                         <th scope="col">customId</th>
                         <th scope="col">Title</th>
                         <th scope="col">Summary</th>
@@ -126,7 +200,8 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
                         <tr key={task._id}>
                             <th scope="row">{index + 1}</th>
                             <td>{task.customId}</td>
-                            <td><Link to={`/${sprintId}/task/${task._id}`}>{task.title}</Link></td>
+                            <td><Link to={`/${projectId}/sprint/${sprintId}/task/${task._id}`}>
+                            {task.title}</Link></td>
                             <td>{task.Summary}</td>
                             <td>{task.status}</td>
                             <td>{task.issueType}</td>
@@ -148,6 +223,7 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
                     ))}
                 </tbody>
             </table>
+        </div>
             <nav aria-label="Page navigation example">
                 <ul className="pagination justify-content-center">
                     <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
@@ -169,5 +245,4 @@ import TaskModal from '../main/AddTask'; // Assuming you have a modal component 
         </div>
     );
 };
-
 export default Tasks;

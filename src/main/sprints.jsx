@@ -65,7 +65,7 @@ const Sprints = () => {
     return (
         <div className="container-fluid">
             <div className="d-flex justify-content-between">
-                <h4><a href='/projects'>Projects</a> / Sprints</h4>
+                <h6><a href='/projects'>Projects</a> / Sprints</h6>
                 <button className="btn btn-primary" onClick={handleShowModal}>Create Sprint</button>
             </div>
             <div className="form-inline mt-3 mb-3">
@@ -81,7 +81,7 @@ const Sprints = () => {
             <table className="table table-striped text-center">
                 <thead >
                     <tr>
-                        <th scope="col ">#</th>
+                        <th scope="col ">Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Type</th>
                         <th scope="col">Start Date</th>

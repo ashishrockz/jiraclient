@@ -1,3 +1,14 @@
+.filter{
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+.filter .thebox .input{
+    margin: 3px;
+
+}
+.filter .form-control{
+    width: auto;
+}
 .table td{
     border-top: none;
 }

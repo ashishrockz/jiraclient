@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
+import { IoLogOutOutline } from "react-icons/io5";
 import logo from './logo.png';
 import picture from './gg.jpg';
 import axios from 'axios';
@@ -32,14 +33,14 @@ const Header = ({ isAuthenticated, onLogout }) => {
         <img src={logo} width="30" height="30" className="d-inline-block align-top" alt=""/>
         Jira
       </a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
+      </button> */}
+      {/* <div className="collapse navbar-collapse" id="navbarNav"> */}
         <ul className="navbar-nav">
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link" href="/">Home</a>
-          </li>
+          </li> */}
           <li className="nav-item">
             <div className="dropdown">
               <button className="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,7 +56,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
             <a className="nav-link" href="/addissue">Create Issue</a>
           </li> */}
         </ul>
-      </div>
+      {/* </div> */}
       <div className="ml-auto">
         <ul className="navbar-nav">
           {isAuthenticated ? (
@@ -66,7 +67,7 @@ const Header = ({ isAuthenticated, onLogout }) => {
               <div className="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
                 <a className="dropdown-item" href={() => false} onClick={handleshowprofile}>Profile</a>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href={() => false} onClick={handleLogout}>Logout</a>
+                <a className="dropdown-item" href={() => false} onClick={handleLogout}><IoLogOutOutline/>Logout</a>
               </div>
             </li>
           ) : (

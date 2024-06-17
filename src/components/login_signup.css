@@ -104,6 +104,9 @@ form a {
   text-decoration: none;
   text-align: center;
 }
+form p {
+  text-align: center;
+}
 
 .link .forgot {
   color: #1877f2;
@@ -123,7 +126,6 @@ hr {
 }
 
 .button {
-  margin-top: 25px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -147,7 +149,6 @@ hr {
     display: block;
   }
   .login_sign-page {
-    flex-direction: column;
     text-align: center;
   }
 

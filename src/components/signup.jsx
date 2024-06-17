@@ -20,7 +20,7 @@ function Signup() {
   };
 
   return (
-    <div className="container flex">
+    <div className="container">
         <div className="text">
           <h1>Logisoft Jira</h1>
           <p>Let's start our journey on Jira, together!</p>
@@ -63,7 +63,7 @@ function Signup() {
             <button type="submit" className="login">Register</button>
           </div>
           <hr />
-          <a>If you have an account</a>
+          <p>If you have an account</p>
           <div className="button">
             <a href="/login">Login</a>
           </div>

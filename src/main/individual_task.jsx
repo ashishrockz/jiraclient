@@ -63,11 +63,11 @@ const IndividualTask = () => {
   return (
     <div className="container-fluid">
       <div className="d-flex justify-content-between">
-        <h4>
+        <h6>
           <Link to='/projects'>Projects</Link> /
           <Link to={`/project/${projectId}/sprint`}>Sprints</Link>/
           <Link to={`/${projectId}/sprint/${sprintId}/tasks`}>Tasks</Link>
-        </h4>
+        </h6>
       </div>
 
       <h5>Task Details</h5>
@@ -83,10 +83,10 @@ const IndividualTask = () => {
           <p><strong>Created Date:</strong>{formatDate(task.createdDate)}</p>
           <p><strong>Updated Date:</strong>{formatDate(task.updatedDate)}</p>
           <div className='row'>
-            <div className='col-2'>
+            <div className='col-1'>
               <button className="btn btn-primary" onClick={handleShowModal}>update</button>
             </div>
-            <div className='col-3'>
+            <div className='col-1'>
               <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
             </div>
           </div>
