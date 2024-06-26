@@ -2,7 +2,9 @@
     margin-bottom: 0px;
     font-size: 16px;
 }
-.filter .thebox .input{
+.filter .thebox {
+    display:inline-flex;
+    align-items: center;
     margin: 3px;
 
 }

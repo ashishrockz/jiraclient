@@ -115,7 +115,6 @@ const AddTaskModal = ({ show, handleClose, sprintId, projectId }) => {
                       required
                     >
                       <option value="" disabled hidden>Choose Type</option>
-                      <option value="Epic">Epic</option>
                       <option value="Task">Task</option>
                       <option value="Bug">Bug</option>
                     </select>

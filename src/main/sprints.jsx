@@ -78,7 +78,7 @@ const Sprints = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
             </div>
-            <table className="table table-striped text-center">
+            <table className="table table-striped">
                 <thead >
                     <tr>
                         <th scope="col ">Id</th>
